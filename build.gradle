@@ -6,12 +6,14 @@ buildscript {
 
         jcenter()
         mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
 
         classpath 'com.android.tools.build:gradle:2.3.0-alpha3'
         classpath 'com.github.triplet.gradle:play-publisher:1.1.5'
+        classpath 'io.fabric.tools:gradle:1.+'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -21,7 +23,9 @@ buildscript {
 allprojects {
 
     repositories {
+
         jcenter()
+        maven { url 'https://maven.fabric.io/public' }
     }
 }
 
@@ -38,6 +42,7 @@ ext {
 
     espressoLibraryVersion = '2.2.2'
     junitLibraryVersion = '4.12'
+    timberLibraryVersion = '4.3.1'
 }
 
 task clean(type: Delete) {
