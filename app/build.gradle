@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.triplet.play'
+
+// Versioning information
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+
+        applicationId "com.orogersilva.bntm"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch * 1
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}-SNAPSHOT"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+
+        release {
+
+            storeFile rootProject.file('bntm.jks')
+            storePassword System.getenv("KEYSTORE_PASSWORD")
+            keyAlias System.getenv("ALIAS_NAME")
+            keyPassword System.getenv("ALIAS_PASSWORD")
+        }
+    }
+
+    buildTypes {
+
+        release {
+
+            signingConfig signingConfigs.release
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+
+        abortOnError false
+    }
+
+    testBuildType obtainTestBuildType()
+
+    play {
+
+        serviceAccountEmail = System.getenv("SERVICE_ACCOUNT_EMAIL")
+        pk12File = rootProject.file('play.p12')
+        track = 'alpha'
+    }
+}
+
+// Show test status in console.
+tasks.withType(Test) {
+
+    testLogging {
+        events "passed", "failed"
+    }
+}
+
+def obtainTestBuildType() {
+
+    def result = "debug"
+
+    if (project.hasProperty("testBuildType")) {
+        result = project.getProperties().get("testBuildType")
+    }
+
+    return result
+}
+
+configurations.all {
+
+    resolutionStrategy {
+
+        force "com.android.support:support-annotations:$rootProject.supportLibraryVersion"
+    }
+}
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+
+    testCompile "junit:junit:$rootProject.junitLibraryVersion"
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.espressoLibraryVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}

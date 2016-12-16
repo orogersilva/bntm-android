@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+
+        classpath 'com.android.tools.build:gradle:2.3.0-alpha3'
+        classpath 'com.github.triplet.gradle:play-publisher:1.1.5'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+
+    // SDK and tools
+    minSdkVersion = 15
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '25.0.0'
+
+    // Dependencies versions
+    supportLibraryVersion = '24.2.1'
+
+    espressoLibraryVersion = '2.2.2'
+    junitLibraryVersion = '4.12'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
