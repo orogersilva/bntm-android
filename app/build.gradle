@@ -37,9 +37,18 @@ android {
 
     buildTypes {
 
+        debug {
+
+            buildConfigField "String", "NEON_API_URL",
+                    "\"http://processoseletivoneon.azurewebsites.net/\""
+        }
+
         release {
 
             signingConfig signingConfigs.release
+
+            buildConfigField "String", "NEON_API_URL",
+                    "\"http://processoseletivoneon.azurewebsites.net/\""
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -96,9 +105,13 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
+    compile "com.google.code.gson:gson:$rootProject.gsonLibraryVersion"
     compile "com.jakewharton.timber:timber:$rootProject.timberLibraryVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitLibraryVersion"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitLibraryVersion"
 
     testCompile "junit:junit:$rootProject.junitLibraryVersion"
+    testCompile "org.mockito:mockito-core:$rootProject.mockitoLibraryVersion"
 
     androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.espressoLibraryVersion", {
         exclude group: 'com.android.support', module: 'support-annotations'
