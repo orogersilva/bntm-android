@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
-        android:padding="10dp"
+        android:padding="@dimen/user_profile_info_layout_padding"
         android:orientation="horizontal"
         >
 
@@ -20,10 +20,10 @@
             android:layout_width="@dimen/circular_imageview_width"
             android:layout_height="@dimen/circular_imageview_height"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="@dimen/user_profile_photo_right_margin"
             android:src="@drawable/roger_silva"
             app:civ_border_color="@color/heavy_blue"
-            app:civ_border_width="6dp"
+            app:civ_border_width="@dimen/user_profile_photo_border_width"
             />
 
         <LinearLayout
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="16dp"
+                android:textSize="@dimen/user_name_text_size"
                 android:textColor="@color/white"
                 />
 
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="12dp"
+                android:textSize="@dimen/user_email_text_size"
                 android:textColor="@color/white"
                 />
 
@@ -60,11 +60,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/transfer_money_button_margin"
         android:text="@string/transfer_money"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/transfer_money_button_text_size"
         android:background="@color/water_green"
         />
 
@@ -73,13 +73,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/money_transfer_history_button_margin"
+        android:layout_marginRight="@dimen/money_transfer_history_button_margin"
+        android:layout_marginBottom="@dimen/money_transfer_history_button_margin"
         android:text="@string/money_transfer_historic"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/money_transfer_history_button_text_size"
         android:background="@color/water_green"
         />
 
