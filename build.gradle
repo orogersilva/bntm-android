@@ -40,6 +40,8 @@ ext {
     // Dependencies versions
     supportLibraryVersion = '24.2.1'
 
+    butterknifeLibraryVersion = '8.4.0'
+    circularImageViewLibraryVersion = '3.0.2'
     espressoLibraryVersion = '2.2.2'
     gsonLibraryVersion = '2.6.2'
     junitLibraryVersion = '4.12'

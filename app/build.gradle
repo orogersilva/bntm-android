@@ -106,7 +106,10 @@ dependencies {
         transitive = true;
     }
     compile "com.google.code.gson:gson:$rootProject.gsonLibraryVersion"
+    compile "com.jakewharton:butterknife:$rootProject.butterknifeLibraryVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeLibraryVersion"
     compile "com.jakewharton.timber:timber:$rootProject.timberLibraryVersion"
+    compile "com.mikhaellopez:circularimageview:$rootProject.circularImageViewLibraryVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitLibraryVersion"
     compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitLibraryVersion"
 

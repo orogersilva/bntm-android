@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">BNTM</string>
@@ -7,8 +8,8 @@
     <string name="preference_file_key">com.orogersilva.bntm.PREFERENCE_FILE_KEY</string>
 
     <!-- LABELS -->
-    <string name="neon_bank">NEON BANK</string>
-    <string name="money_transfer_historic">MONEY TRANSFER HISTORIC</string>
-    <string name="transfer_money">SEND MONEY</string>
+    <string name="neon_bank">BANCO NEON</string>
+    <string name="money_transfer_historic">HISTÓRICO DE ENVIOS</string>
+    <string name="transfer_money">ENVIAR DINHEIRO</string>
 
 </resources>
