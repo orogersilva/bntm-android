@@ -1,12 +1,11 @@
-package com.orogersilva.bntm.ui.home;
+package com.orogersilva.bntm.presentation.home;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
 
 import com.orogersilva.bntm.R;
-import com.orogersilva.bntm.ui.home.view.HomeFragment;
+import com.orogersilva.bntm.presentation.home.view.HomeFragment;
 import com.orogersilva.bntm.util.ActivityUtils;
 
 /**

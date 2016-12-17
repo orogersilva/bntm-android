@@ -1,4 +1,4 @@
-package com.orogersilva.bntm.ui.home.view;
+package com.orogersilva.bntm.presentation.home.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.orogersilva.bntm.R;
-import com.orogersilva.bntm.ui.home.HomeContract;
-import com.orogersilva.bntm.ui.home.HomePresenter;
+import com.orogersilva.bntm.presentation.home.HomeContract;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

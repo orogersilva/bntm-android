@@ -1,11 +1,4 @@
-package com.orogersilva.bntm.ui.home;
-
-import android.support.annotation.MainThread;
-
-import com.orogersilva.bntm.domain.executor.Executor;
-import com.orogersilva.bntm.domain.repository.AuthRepository;
-import com.orogersilva.bntm.domain.usecase.GetAuthTokenUseCase;
-import com.orogersilva.bntm.domain.usecase.impl.GetAuthTokenUseCaseImpl;
+package com.orogersilva.bntm.presentation.home;
 
 /**
  * Created by orogersilva on 12/17/2016.
