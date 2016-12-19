@@ -2,6 +2,7 @@ package com.orogersilva.bntm.domain.usecase;
 
 import com.orogersilva.bntm.AuthDataSource;
 import com.orogersilva.bntm.domain.executor.Executor;
+import com.orogersilva.bntm.domain.executor.MainThread;
 import com.orogersilva.bntm.domain.repository.AuthRepository;
 import com.orogersilva.bntm.domain.usecase.GetAuthTokenUseCase;
 import com.orogersilva.bntm.domain.usecase.impl.GetAuthTokenUseCaseImpl;
@@ -36,6 +37,8 @@ public class GetAuthTokenTest {
     @Mock
     private Executor mExecutor;
     @Mock
+    private MainThread mMainThread;
+    @Mock
     private AuthRepository mAuthRepository;
     @Mock
     private GetAuthTokenUseCase.Callback mGetAuthTokenUseCaseCallback;
@@ -64,7 +67,8 @@ public class GetAuthTokenTest {
         mName = null;
         mEmail = null;
 
-        GetAuthTokenUseCaseImpl usecase = new GetAuthTokenUseCaseImpl(mName, mEmail, mExecutor, mGetAuthTokenUseCaseCallback, mAuthRepository);
+        GetAuthTokenUseCaseImpl usecase = new GetAuthTokenUseCaseImpl(mName, mEmail, mExecutor,
+                mMainThread, mGetAuthTokenUseCaseCallback, mAuthRepository);
 
         // ACT
 
@@ -90,7 +94,8 @@ public class GetAuthTokenTest {
 
         final String EXPECTED_AUTH_TOKEN = "kd9DKzKZJ90sjzAL2mSJXsia";
 
-        GetAuthTokenUseCaseImpl usecase = new GetAuthTokenUseCaseImpl(mName, mEmail, mExecutor, mGetAuthTokenUseCaseCallback, mAuthRepository);
+        GetAuthTokenUseCaseImpl usecase = new GetAuthTokenUseCaseImpl(mName, mEmail, mExecutor,
+                mMainThread, mGetAuthTokenUseCaseCallback, mAuthRepository);
 
         // ACT
 

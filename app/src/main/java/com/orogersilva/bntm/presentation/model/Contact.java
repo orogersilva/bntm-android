@@ -12,6 +12,7 @@ public class Contact {
 
     // region FIELDS
 
+    private long id;
     private String name;
     private String phone;
     private byte[] photo;
@@ -20,8 +21,9 @@ public class Contact {
 
     // region CONSTRUCTORS
 
-    public Contact(String name, String phone, byte[] photo) {
+    public Contact(long id, String name, String phone, byte[] photo) {
 
+        this.id = id;
         this.name = name;
         this.phone = phone;
         this.photo = photo;
@@ -30,6 +32,11 @@ public class Contact {
     // endregion
 
     // region PUBLIC METHODS
+
+    public long getId() {
+
+        return id;
+    }
 
     public String getName() {
 
@@ -58,7 +65,8 @@ public class Contact {
 
         Contact contact = (Contact) o;
 
-        return (name != null && contact.getName() != null && name.equals(contact.getName())) &&
+        return id == contact.getId() &&
+                (name != null && contact.getName() != null && name.equals(contact.getName())) &&
                 (phone != null && contact.getPhone() != null && phone.equals(contact.getPhone())) &&
                 Arrays.equals(photo, contact.getPhoto());
     }

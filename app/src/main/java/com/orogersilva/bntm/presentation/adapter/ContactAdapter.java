@@ -18,6 +18,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import timber.log.Timber;
 
 /**
@@ -107,6 +108,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ItemView
             super(itemView);
 
             ButterKnife.bind(this, itemView);
+        }
+
+        // endregion
+
+        // region EVENT HANDLERS
+
+        @OnClick(R.id.itemview_contact)
+        public void onContactClick() {
+
+            mContactItemListener.onContactClicked(mContacts.get(getAdapterPosition()));
         }
 
         // endregion

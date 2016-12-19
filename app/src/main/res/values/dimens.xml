@@ -3,14 +3,23 @@
 
     <dimen name="toolbar_text_size">20sp</dimen>
 
+    <dimen name="close_button_margin">10dp</dimen>
     <dimen name="contact_circular_imageview_width">100dp</dimen>
     <dimen name="contact_circular_imageview_height">100dp</dimen>
+    <dimen name="contact_itemview_margin">8dp</dimen>
+    <dimen name="contact_name_textview_text_size">17sp</dimen>
+    <dimen name="contact_phone_textview_text_size">14sp</dimen>
     <dimen name="contact_profile_photo_border_width">6dp</dimen>
     <dimen name="contact_profile_photo_right_margin">8dp</dimen>
+    <dimen name="currency_edittext_text_size">35sp</dimen>
+    <dimen name="money_to_send_textview_margin_bottom">2dp</dimen>
+    <dimen name="money_to_send_textview_margin_top">5dp</dimen>
     <dimen name="money_transfer_history_button_margin">10dp</dimen>
     <dimen name="money_transfer_history_button_text_size">15sp</dimen>
     <dimen name="profile_circular_imageview_width">150dp</dimen>
     <dimen name="profile_circular_imageview_height">150dp</dimen>
+    <dimen name="send_button_margin">10dp</dimen>
+    <dimen name="transfer_dialog_padding">5dp</dimen>
     <dimen name="transfer_money_button_margin">10dp</dimen>
     <dimen name="transfer_money_button_text_size">15sp</dimen>
     <dimen name="user_profile_info_layout_padding">10dp</dimen>
