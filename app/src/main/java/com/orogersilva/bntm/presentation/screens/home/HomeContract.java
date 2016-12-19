@@ -1,4 +1,4 @@
-package com.orogersilva.bntm.presentation.home;
+package com.orogersilva.bntm.presentation.screens.home;
 
 import com.orogersilva.bntm.BasePresenter;
 import com.orogersilva.bntm.BaseView;

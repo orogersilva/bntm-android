@@ -1,6 +1,7 @@
 package com.orogersilva.bntm.domain.usecase.base;
 
 import com.orogersilva.bntm.domain.executor.Executor;
+import com.orogersilva.bntm.domain.executor.MainThread;
 
 /**
  * Created by orogersilva on 12/16/2016.
@@ -11,6 +12,7 @@ public abstract class AbstractUseCase implements UseCase {
     // region FIELDS
 
     protected Executor mThreadExecutor;
+    protected MainThread mMainThread;
 
     protected boolean mIsCanceled;
     protected boolean mIsRunning;
@@ -19,9 +21,10 @@ public abstract class AbstractUseCase implements UseCase {
 
     // region CONSTRUCTORS
 
-    public AbstractUseCase(Executor threadExecutor) {
+    public AbstractUseCase(Executor threadExecutor, MainThread mainThread) {
 
         mThreadExecutor = threadExecutor;
+        mMainThread = mainThread;
     }
 
     // endregion

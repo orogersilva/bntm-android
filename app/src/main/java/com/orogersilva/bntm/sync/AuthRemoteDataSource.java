@@ -16,6 +16,31 @@ import timber.log.Timber;
 
 public class AuthRemoteDataSource implements AuthDataSource {
 
+    // region FIELDS
+
+    private static AuthRemoteDataSource INSTANCE;
+
+    // endregion
+
+    // region CONSTRUCTORS
+
+    private AuthRemoteDataSource() {}
+
+    // endregion
+
+    // region STATIC METHODS
+
+    public static AuthRemoteDataSource getInstance() {
+
+        if (INSTANCE == null) {
+            INSTANCE = new AuthRemoteDataSource();
+        }
+
+        return INSTANCE;
+    }
+
+    // endregion
+
     // region OVERRIDED METHODS
 
     @Override

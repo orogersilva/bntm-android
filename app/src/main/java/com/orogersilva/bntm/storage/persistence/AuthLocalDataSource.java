@@ -15,15 +15,30 @@ public class AuthLocalDataSource implements AuthDataSource {
 
     // region FIELDS
 
+    private static AuthLocalDataSource INSTANCE;
+
     private Context mContext;
 
     // endregion
 
     // region CONSTRUCTORS
 
-    public AuthLocalDataSource(Context context) {
+    private AuthLocalDataSource(Context context) {
 
         mContext = context;
+    }
+
+    // endregion
+
+    // region STATIC METHODS
+
+    public static AuthLocalDataSource getInstance(Context context) {
+
+        if (INSTANCE == null) {
+            INSTANCE = new AuthLocalDataSource(context);
+        }
+
+        return INSTANCE;
     }
 
     // endregion

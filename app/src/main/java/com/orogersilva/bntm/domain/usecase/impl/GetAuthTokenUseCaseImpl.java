@@ -2,6 +2,7 @@ package com.orogersilva.bntm.domain.usecase.impl;
 
 import com.orogersilva.bntm.AuthDataSource;
 import com.orogersilva.bntm.domain.executor.Executor;
+import com.orogersilva.bntm.domain.executor.MainThread;
 import com.orogersilva.bntm.domain.repository.AuthRepository;
 import com.orogersilva.bntm.domain.usecase.GetAuthTokenUseCase;
 import com.orogersilva.bntm.domain.usecase.base.AbstractUseCase;
@@ -25,9 +26,10 @@ public class GetAuthTokenUseCaseImpl extends AbstractUseCase implements GetAuthT
     // region CONSTRUCTORS
 
     public GetAuthTokenUseCaseImpl(String name, String email, Executor threadExecutor,
-                                   Callback callback, AuthRepository authRepository) {
+                                   MainThread mainThread, Callback callback,
+                                   AuthRepository authRepository) {
 
-        super(threadExecutor);
+        super(threadExecutor, mainThread);
 
         mName = name;
         mEmail = email;
@@ -45,15 +47,37 @@ public class GetAuthTokenUseCaseImpl extends AbstractUseCase implements GetAuthT
         mAuthRepository.getAuthToken(mName, mEmail, new AuthDataSource.GetAuthTokenCallback() {
 
             @Override
-            public void onAuthTokenLoaded(String authToken) {
+            public void onAuthTokenLoaded(final String authToken) {
 
-                mCallback.onAuthTokenLoaded(authToken);
+                mMainThread.post(new Runnable() {
+
+                    // region OVERRIDED METHODS
+
+                    @Override
+                    public void run() {
+
+                        mCallback.onAuthTokenLoaded(authToken);
+                    }
+
+                    // endregion
+                });
             }
 
             @Override
             public void onFailed() {
 
-                mCallback.onFailed();
+                mMainThread.post(new Runnable() {
+
+                    // region OVERRIDED METHODS
+
+                    @Override
+                    public void run() {
+
+                        mCallback.onFailed();
+                    }
+
+                    // endregion
+                });
             }
         });
     }

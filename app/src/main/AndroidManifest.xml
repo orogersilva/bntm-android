@@ -12,13 +12,16 @@
         android:theme="@style/AppTheme"
         android:name=".BntmApp">
 
-        <activity android:name=".presentation.home.HomeActivity">
+        <activity android:name=".presentation.screens.home.HomeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+        </activity>
+
+        <activity android:name=".presentation.screens.transfer.TransferActivity">
         </activity>
 
         <meta-data

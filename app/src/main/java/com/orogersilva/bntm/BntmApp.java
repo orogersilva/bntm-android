@@ -6,6 +6,8 @@ import android.util.Log;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.*;
 import com.crashlytics.android.core.BuildConfig;
+import com.orogersilva.bntm.storage.persistence.AuthLocalDataSource;
+import com.orogersilva.bntm.util.StringUtils;
 
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
@@ -15,6 +17,14 @@ import timber.log.Timber;
  */
 
 public class BntmApp extends Application {
+
+    // region FIELDS
+
+    private static BntmApp INSTANCE;
+
+    private String mAuthToken;
+
+    // endregion
 
     // region APPLICATION LIFECYCLE METHODS
 
@@ -36,6 +46,69 @@ public class BntmApp extends Application {
         }
 
         Timber.plant(new CrashlyticsTree());
+
+        INSTANCE = this;
+
+        tryRetrieveAuthTokenFromStorage();
+    }
+
+    // endregion
+
+    // region STATIC METHODS
+
+    public static BntmApp getInstance() {
+
+        return INSTANCE;
+    }
+
+    // endregion
+
+    // region PUBLIC METHODS
+
+    public String getAuthToken() {
+
+        if (StringUtils.isNullOrEmpty(mAuthToken)) {
+            tryRetrieveAuthTokenFromStorage();
+        }
+
+        return mAuthToken;
+    }
+
+    public void setAuthToken(String authToken) {
+
+        mAuthToken = authToken;
+    }
+
+    public boolean hasLoggedIn() {
+
+        return !StringUtils.isNullOrEmpty(mAuthToken);
+    }
+
+    // endregion
+
+    // region UTILITY METHODS
+
+    private void tryRetrieveAuthTokenFromStorage() {
+
+        final String NAME = "Roger Silva";
+        final String EMAIL = "orogersilva@gmail.com";
+
+        AuthLocalDataSource authLocalDataSource = AuthLocalDataSource.getInstance(this);
+
+        authLocalDataSource.getAuthToken(NAME, EMAIL, new AuthDataSource.GetAuthTokenCallback() {
+
+            @Override
+            public void onAuthTokenLoaded(String authToken) {
+
+                mAuthToken = authToken;
+            }
+
+            @Override
+            public void onFailed() {
+
+                mAuthToken = null;
+            }
+        });
     }
 
     // endregion

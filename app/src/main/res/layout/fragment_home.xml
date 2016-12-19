@@ -17,8 +17,8 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/profileCircularImageView"
-            android:layout_width="@dimen/circular_imageview_width"
-            android:layout_height="@dimen/circular_imageview_height"
+            android:layout_width="@dimen/profile_circular_imageview_width"
+            android:layout_height="@dimen/profile_circular_imageview_height"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/user_profile_photo_right_margin"
             android:src="@drawable/roger_silva"

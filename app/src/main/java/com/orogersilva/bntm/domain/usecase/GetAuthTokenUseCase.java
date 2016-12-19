@@ -12,7 +12,7 @@ public interface GetAuthTokenUseCase extends UseCase {
 
     interface Callback {
 
-        void onAuthTokenLoaded(String token);
+        void onAuthTokenLoaded(String authToken);
         void onFailed();
     }
 

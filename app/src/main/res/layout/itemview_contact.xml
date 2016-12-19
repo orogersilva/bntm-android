@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/contactCircularImageView"
+        android:layout_width="@dimen/contact_circular_imageview_width"
+        android:layout_height="@dimen/contact_circular_imageview_height"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/contact_profile_photo_right_margin"
+        app:civ_border_color="@color/heavy_blue"
+        app:civ_border_width="@dimen/contact_profile_photo_border_width"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            />
+
+        <TextView
+            android:id="@+id/phoneTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

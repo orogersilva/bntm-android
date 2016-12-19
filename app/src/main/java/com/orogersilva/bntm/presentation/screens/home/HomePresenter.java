@@ -1,4 +1,4 @@
-package com.orogersilva.bntm.presentation.home;
+package com.orogersilva.bntm.presentation.screens.home;
 
 /**
  * Created by orogersilva on 12/17/2016.
