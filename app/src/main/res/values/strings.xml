@@ -13,8 +13,8 @@
     <string name="money_transfer_historic">MONEY TRANSFER HISTORIC</string>
     <string name="send">SEND</string>
     <string name="send_money">SEND MONEY</string>
-    <string name="send_money_fail_status_message">There was a transfer failure. Please try again.</string>
     <string name="send_money_successful_status_message">The money has been successfully sent.</string>
+    <string name="sync_failure_message">There was a sync failure. Please, try again later.</string>
     <string name="transfer_historic">TRANSFER HISTORIC</string>
 
 </resources>

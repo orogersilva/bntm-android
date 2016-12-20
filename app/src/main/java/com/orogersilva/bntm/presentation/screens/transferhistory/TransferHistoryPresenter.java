@@ -60,9 +60,7 @@ public class TransferHistoryPresenter extends AbstractPresenter implements Trans
     @Override
     public void loadContactTransfersHistory() {
 
-        String authToken = BntmApp.getInstance().getAuthToken();
-
-        if (StringUtils.isNullOrEmpty(authToken)) {
+        if (!BntmApp.getInstance().hasLoggedIn()) {
 
             GetAuthTokenUseCase getAuthTokenUseCase = new GetAuthTokenUseCaseImpl(
                     BntmApp.getInstance().getUsername(), BntmApp.getInstance().getEmail(),
@@ -71,13 +69,16 @@ public class TransferHistoryPresenter extends AbstractPresenter implements Trans
                 @Override
                 public void onAuthTokenLoaded(String authToken) {
 
+                    mView.showLoadingIndicator(false);
+
                     processContactTransfersHistory();
                 }
 
                 @Override
                 public void onFailed() {
 
-                    // TODO: 12/20/2016 TO SHOW ERROR MESSAGE.
+                    mView.showLoadingIndicator(false);
+                    mView.showSyncErrorMessage();
                 }
 
             }, mAuthRepository);
@@ -113,8 +114,7 @@ public class TransferHistoryPresenter extends AbstractPresenter implements Trans
             public void onDataNotAvailable() {
 
                 mView.showLoadingIndicator(false);
-
-                // TODO: 12/20/2016 SHOW ERROR MESSAGE.
+                mView.showSyncErrorMessage();
             }
 
         }, mTransferRepository);

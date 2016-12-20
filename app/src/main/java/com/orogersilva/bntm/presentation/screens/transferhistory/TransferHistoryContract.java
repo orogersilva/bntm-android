@@ -22,6 +22,8 @@ public interface TransferHistoryContract {
 
         void showContactTransfersHistory(List<ContactTransfer> contactTransfers);
 
+        void showSyncErrorMessage();
+
         // endregion
     }
 

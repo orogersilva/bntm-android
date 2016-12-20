@@ -1,6 +1,7 @@
 package com.orogersilva.bntm.presentation.screens.transferhistory.view;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -106,6 +107,15 @@ public class TransferHistoryFragment extends Fragment implements TransferHistory
         mContactTransfers.addAll(contactTransfers);
 
         mContactTransferHistoryAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void showSyncErrorMessage() {
+
+        Snackbar.make(getActivity().findViewById(android.R.id.content),
+                getActivity().getString(R.string.sync_failure_message),
+                Snackbar.LENGTH_INDEFINITE)
+                .show();
     }
 
     // endregion

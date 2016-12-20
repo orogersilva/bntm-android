@@ -15,7 +15,6 @@ import com.orogersilva.bntm.domain.usecase.impl.SendMoneyUseCaseImpl;
 import com.orogersilva.bntm.presentation.converter.PresentationModelConverter;
 import com.orogersilva.bntm.presentation.model.Contact;
 import com.orogersilva.bntm.presentation.screens.AbstractPresenter;
-import com.orogersilva.bntm.util.StringUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -72,9 +71,7 @@ public class TransferPresenter extends AbstractPresenter implements TransferCont
     @Override
     public void sendMoney(final Contact contact, final double moneyValue) {
 
-        String authToken = BntmApp.getInstance().getAuthToken();
-
-        if (StringUtils.isNullOrEmpty(authToken)) {
+        if (!BntmApp.getInstance().hasLoggedIn()) {
 
             GetAuthTokenUseCase getAuthTokenUseCase = new GetAuthTokenUseCaseImpl(
                     BntmApp.getInstance().getUsername(), BntmApp.getInstance().getEmail(),
@@ -125,7 +122,6 @@ public class TransferPresenter extends AbstractPresenter implements TransferCont
                     public void onDataNotAvailable() {
 
                         mView.showLoadingIndicator(false);
-                        // TODO: 12/17/2016 To show message of "Fail to load contacts."
                     }
 
                 }, mContactRepository);

@@ -139,12 +139,12 @@ public class TransferFragment extends Fragment implements TransferContract.View 
         if (isSuccessful) {
             message = getActivity().getString(R.string.send_money_successful_status_message);
         } else {
-            message = getActivity().getString(R.string.send_money_fail_status_message);
+            message = getActivity().getString(R.string.sync_failure_message);
         }
 
         Snackbar.make(getActivity().findViewById(android.R.id.content),
                 message,
-                Snackbar.LENGTH_LONG)
+                Snackbar.LENGTH_INDEFINITE)
                 .show();
     }
 
