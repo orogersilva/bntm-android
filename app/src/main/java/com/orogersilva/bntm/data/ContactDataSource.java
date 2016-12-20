@@ -1,4 +1,4 @@
-package com.orogersilva.bntm;
+package com.orogersilva.bntm.data;
 
 import com.orogersilva.bntm.storage.model.Contact;
 

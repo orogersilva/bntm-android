@@ -1,6 +1,6 @@
 package com.orogersilva.bntm.sync;
 
-import com.orogersilva.bntm.TransferDataSource;
+import com.orogersilva.bntm.data.TransferDataSource;
 import com.orogersilva.bntm.net.RestClient;
 import com.orogersilva.bntm.net.services.TransferService;
 import com.orogersilva.bntm.sync.model.Transfer;

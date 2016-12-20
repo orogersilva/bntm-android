@@ -2,7 +2,7 @@ package com.orogersilva.bntm.domain.repository;
 
 import android.support.annotation.NonNull;
 
-import com.orogersilva.bntm.AuthDataSource;
+import com.orogersilva.bntm.data.AuthDataSource;
 
 /**
  * Created by orogersilva on 12/16/2016.

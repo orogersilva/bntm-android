@@ -2,7 +2,7 @@ package com.orogersilva.bntm.domain.repository;
 
 import android.support.annotation.NonNull;
 
-import com.orogersilva.bntm.TransferDataSource;
+import com.orogersilva.bntm.data.TransferDataSource;
 import com.orogersilva.bntm.storage.model.ContactTransfer;
 import com.orogersilva.bntm.sync.model.Transfer;
 

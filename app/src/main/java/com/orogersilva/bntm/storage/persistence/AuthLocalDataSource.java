@@ -3,7 +3,7 @@ package com.orogersilva.bntm.storage.persistence;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.orogersilva.bntm.AuthDataSource;
+import com.orogersilva.bntm.data.AuthDataSource;
 import com.orogersilva.bntm.R;
 import com.orogersilva.bntm.util.StringUtils;
 

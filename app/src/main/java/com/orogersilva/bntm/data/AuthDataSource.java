@@ -1,4 +1,4 @@
-package com.orogersilva.bntm;
+package com.orogersilva.bntm.data;
 
 /**
  * Created by orogersilva on 12/16/2016.

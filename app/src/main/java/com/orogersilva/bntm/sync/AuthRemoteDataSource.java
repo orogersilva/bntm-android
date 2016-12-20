@@ -1,6 +1,6 @@
 package com.orogersilva.bntm.sync;
 
-import com.orogersilva.bntm.AuthDataSource;
+import com.orogersilva.bntm.data.AuthDataSource;
 import com.orogersilva.bntm.net.RestClient;
 import com.orogersilva.bntm.net.services.AuthService;
 

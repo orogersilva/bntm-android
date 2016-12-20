@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
-import com.orogersilva.bntm.TransferDataSource;
+import com.orogersilva.bntm.data.TransferDataSource;
 import com.orogersilva.bntm.storage.model.ContactTransfer;
 import com.orogersilva.bntm.storage.persistence.PersistenceContract.TransferEntry;
 import com.orogersilva.bntm.sync.model.Transfer;

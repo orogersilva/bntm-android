@@ -2,7 +2,7 @@ package com.orogersilva.bntm.domain.repository;
 
 import android.support.annotation.NonNull;
 
-import com.orogersilva.bntm.ContactDataSource;
+import com.orogersilva.bntm.data.ContactDataSource;
 import com.orogersilva.bntm.storage.model.Contact;
 
 import java.util.List;

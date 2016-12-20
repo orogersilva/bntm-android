@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.orogersilva.bntm.ContactDataSource;
+import com.orogersilva.bntm.data.ContactDataSource;
 import com.orogersilva.bntm.storage.model.Contact;
 import com.orogersilva.bntm.storage.persistence.PersistenceContract.ContactEntry;
 

@@ -1,6 +1,6 @@
 package com.orogersilva.bntm.domain.usecase.impl;
 
-import com.orogersilva.bntm.TransferDataSource;
+import com.orogersilva.bntm.data.TransferDataSource;
 import com.orogersilva.bntm.domain.executor.Executor;
 import com.orogersilva.bntm.domain.executor.MainThread;
 import com.orogersilva.bntm.domain.repository.TransferRepository;
