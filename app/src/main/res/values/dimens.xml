@@ -22,6 +22,7 @@
     <dimen name="transfer_dialog_padding">5dp</dimen>
     <dimen name="transfer_money_button_margin">10dp</dimen>
     <dimen name="transfer_money_button_text_size">15sp</dimen>
+    <dimen name="transferred_money_value_textview_text_size">17sp</dimen>
     <dimen name="user_profile_info_layout_padding">10dp</dimen>
     <dimen name="user_email_text_size">12dp</dimen>
     <dimen name="user_name_text_size">16dp</dimen>

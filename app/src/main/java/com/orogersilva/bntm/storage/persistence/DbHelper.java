@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import com.orogersilva.bntm.R;
 import com.orogersilva.bntm.storage.model.Contact;
 import com.orogersilva.bntm.storage.persistence.PersistenceContract.ContactEntry;
+import com.orogersilva.bntm.storage.persistence.PersistenceContract.TransferEntry;
 import com.orogersilva.bntm.util.BitmapUtils;
 
 import java.util.Arrays;
@@ -55,6 +56,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(SQL_CREATE_CONTACT_ENTRIES);
+        db.execSQL(SQL_CREATE_TRANSFER_ENTRIES);
 
         prepareContacts(db);
     }
@@ -62,6 +64,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        db.execSQL(SQL_DELETE_TRANSFER_ENTRIES);
         db.execSQL(SQL_DELETE_CONTACT_ENTRIES);
 
         onCreate(db);
@@ -151,14 +154,27 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_CONTACT_ENTRIES =
             "CREATE TABLE " + ContactEntry.TABLE_NAME + " (" +
-                    ContactEntry.COLUMN_NAME_ID + INTEGER_TYPE + " PRIMARY KEY" + COMMA_SEPARATOR +
+                    ContactEntry.COLUMN_NAME_ID + INTEGER_TYPE + " PRIMARY KEY AUTOINCREMENT" + COMMA_SEPARATOR +
                     ContactEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEPARATOR +
                     ContactEntry.COLUMN_NAME_PHONE + TEXT_TYPE + COMMA_SEPARATOR +
                     ContactEntry.COLUMN_NAME_PHOTO + BLOB_TYPE +
                     ")";
 
+    private static final String SQL_CREATE_TRANSFER_ENTRIES =
+            "CREATE TABLE " + TransferEntry.TABLE_NAME + " (" +
+                    TransferEntry.COLUMN_NAME_ID + INTEGER_TYPE + " PRIMARY KEY" + COMMA_SEPARATOR +
+                    TransferEntry.COLUMN_NAME_CLIENT_ID + INTEGER_TYPE + COMMA_SEPARATOR +
+                    TransferEntry.COLUMN_NAME_MONEY_VALUE + INTEGER_TYPE + COMMA_SEPARATOR +
+                    TransferEntry.COLUMN_NAME_DATE + TEXT_TYPE + COMMA_SEPARATOR +
+                    " FOREIGN KEY (" + TransferEntry.COLUMN_NAME_CLIENT_ID +
+                        ") REFERENCES " + ContactEntry.TABLE_NAME + "(" + ContactEntry.COLUMN_NAME_ID + ")" +
+                    " )";
+
     private static final String SQL_DELETE_CONTACT_ENTRIES =
             "DROP TABLE IF EXISTS " + ContactEntry.TABLE_NAME;
+
+    private static final String SQL_DELETE_TRANSFER_ENTRIES =
+            "DROP TABLE IF EXISTS " + TransferEntry.TABLE_NAME;
 
     // endregion
 }

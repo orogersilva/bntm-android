@@ -30,5 +30,19 @@ public class PersistenceContract {
         // endregion
     }
 
+    public static abstract class TransferEntry implements BaseColumns {
+
+        // region FIELDS
+
+        public static final String TABLE_NAME = "transfer";
+
+        public static final String COLUMN_NAME_ID = TABLE_NAME + "_id";
+        public static final String COLUMN_NAME_CLIENT_ID = TABLE_NAME + "_client_id";
+        public static final String COLUMN_NAME_MONEY_VALUE = TABLE_NAME + "_money_value";
+        public static final String COLUMN_NAME_DATE = TABLE_NAME + "_date";
+
+        // endregion
+    }
+
     // endregion
 }

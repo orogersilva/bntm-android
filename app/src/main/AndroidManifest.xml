@@ -24,6 +24,9 @@
         <activity android:name=".presentation.screens.transfer.TransferActivity">
         </activity>
 
+        <activity android:name=".presentation.screens.transferhistory.TransferHistoryActivity">
+        </activity>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="18675801ce19bc7403152fb89f1a2ebf672faa4b" />

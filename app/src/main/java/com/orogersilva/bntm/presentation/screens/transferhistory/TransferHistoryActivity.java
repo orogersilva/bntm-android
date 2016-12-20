@@ -1,4 +1,4 @@
-package com.orogersilva.bntm.presentation.screens.transfer;
+package com.orogersilva.bntm.presentation.screens.transferhistory;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,25 +10,23 @@ import com.orogersilva.bntm.MainThreadImpl;
 import com.orogersilva.bntm.R;
 import com.orogersilva.bntm.domain.executor.impl.ThreadExecutor;
 import com.orogersilva.bntm.domain.repository.AuthRepository;
-import com.orogersilva.bntm.domain.repository.ContactRepository;
 import com.orogersilva.bntm.domain.repository.TransferRepository;
-import com.orogersilva.bntm.presentation.screens.transfer.view.TransferFragment;
+import com.orogersilva.bntm.presentation.screens.transferhistory.view.TransferHistoryFragment;
 import com.orogersilva.bntm.storage.persistence.AuthLocalDataSource;
-import com.orogersilva.bntm.storage.persistence.ContactLocalDataSource;
 import com.orogersilva.bntm.storage.persistence.TransferLocalDataSource;
 import com.orogersilva.bntm.sync.AuthRemoteDataSource;
 import com.orogersilva.bntm.sync.TransferRemoteDataSource;
 import com.orogersilva.bntm.util.ActivityUtils;
 
 /**
- * Created by orogersilva on 12/17/2016.
+ * Created by orogersilva on 12/20/2016.
  */
 
-public class TransferActivity extends AppCompatActivity {
+public class TransferHistoryActivity extends AppCompatActivity {
 
     // region FIELDS
 
-    private TransferPresenter mTransferPresenter;
+    private TransferHistoryPresenter mTransferHistoryPresenter;
     private Toolbar mToolbar;
 
     // endregion
@@ -39,12 +37,12 @@ public class TransferActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transfer);
+        setContentView(R.layout.activity_transfer_history);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle("");
         TextView toolbarTextView = (TextView) mToolbar.findViewById(R.id.toolbarTitleTextView);
-        toolbarTextView.setText(getString(R.string.send_money));
+        toolbarTextView.setText(getString(R.string.transfer_historic));
 
         setSupportActionBar(mToolbar);
 
@@ -58,23 +56,22 @@ public class TransferActivity extends AppCompatActivity {
             }
         });
 
-        TransferFragment transferFragment = (TransferFragment)
+        TransferHistoryFragment transferHistoryFragment = (TransferHistoryFragment)
                 getSupportFragmentManager().findFragmentById(R.id.contentFrameLayout);
 
-        if (transferFragment == null) {
+        if (transferHistoryFragment == null) {
 
-            transferFragment = TransferFragment.newInstance();
+            transferHistoryFragment = TransferHistoryFragment.newInstance();
 
-            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), transferFragment,
-                    R.id.contentFrameLayout);
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
+                    transferHistoryFragment, R.id.contentFrameLayout);
         }
 
-        mTransferPresenter = new TransferPresenter(transferFragment, ThreadExecutor.getInstance(),
-                MainThreadImpl.getInstance(), AuthRepository.getInstance(
-                AuthLocalDataSource.getInstance(this), AuthRemoteDataSource.getInstance()),
-                ContactRepository.getInstance(ContactLocalDataSource.getInstance(this)),
-                TransferRepository.getInstance(TransferLocalDataSource.getInstance(this),
-                        TransferRemoteDataSource.getInstance()));
+        mTransferHistoryPresenter = new TransferHistoryPresenter(transferHistoryFragment,
+                ThreadExecutor.getInstance(), MainThreadImpl.getInstance(),
+                AuthRepository.getInstance(AuthLocalDataSource.getInstance(this),
+                        AuthRemoteDataSource.getInstance()), TransferRepository.getInstance(
+                TransferLocalDataSource.getInstance(this), TransferRemoteDataSource.getInstance()));
     }
 
     // endregion

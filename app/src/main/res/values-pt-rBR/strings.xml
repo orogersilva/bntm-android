@@ -15,5 +15,6 @@
     <string name="send_money">ENVIAR DINHEIRO</string>
     <string name="send_money_fail_status_message">Houve uma falha no envio. Favor, tentar novamente.</string>
     <string name="send_money_successful_status_message">O envio foi realizado com sucesso.</string>
+    <string name="transfer_historic">HISTÓRICO DE ENVIOS</string>
 
 </resources>

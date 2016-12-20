@@ -15,5 +15,6 @@
     <string name="send_money">SEND MONEY</string>
     <string name="send_money_fail_status_message">There was a transfer failure. Please try again.</string>
     <string name="send_money_successful_status_message">The money has been successfully sent.</string>
+    <string name="transfer_historic">TRANSFER HISTORIC</string>
 
 </resources>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.orogersilva.bntm.R;
 import com.orogersilva.bntm.presentation.screens.home.HomeContract;
 import com.orogersilva.bntm.presentation.screens.transfer.TransferActivity;
+import com.orogersilva.bntm.presentation.screens.transferhistory.TransferHistoryActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -105,7 +106,9 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     @OnClick(R.id.moneyTransferHistoryButton)
     public void showMoneyTransferHistory() {
 
-        // TODO: 12/17/2016 TO IMPLEMENT.
+        Intent intent = new Intent(getActivity(), TransferHistoryActivity.class);
+
+        startActivity(intent);
     }
 
     // endregion

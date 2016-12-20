@@ -6,7 +6,7 @@ import com.orogersilva.bntm.domain.executor.MainThread;
 import com.orogersilva.bntm.domain.repository.ContactRepository;
 import com.orogersilva.bntm.domain.usecase.GetContactsUseCase;
 import com.orogersilva.bntm.domain.usecase.base.AbstractUseCase;
-import com.orogersilva.bntm.storage.converter.StorageModelConverters;
+import com.orogersilva.bntm.storage.converter.StorageModelConverter;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class GetContactsUseCaseImpl extends AbstractUseCase implements GetContac
                     @Override
                     public void run() {
 
-                        mCallback.onContactsLoaded(StorageModelConverters.convertListToDomainModel(contacts));
+                        mCallback.onContactsLoaded(StorageModelConverter.convertListToDomainModel(contacts));
                     }
 
                     // endregion

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/contact_itemview_margin"
+    android:orientation="horizontal"
+    >
+
+    <include
+        layout="@layout/itemview_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:id="@+id/transferredMoneyValueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="right"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/transferred_money_value_textview_text_size"
+        />
+
+</LinearLayout>

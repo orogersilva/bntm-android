@@ -9,7 +9,7 @@ import java.util.List;
  * Created by orogersilva on 12/18/2016.
  */
 
-public class StorageModelConverters {
+public class StorageModelConverter {
 
     // region STATIC METHODS
 

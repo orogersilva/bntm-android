@@ -12,7 +12,7 @@ import com.orogersilva.bntm.domain.usecase.SendMoneyUseCase;
 import com.orogersilva.bntm.domain.usecase.impl.GetAuthTokenUseCaseImpl;
 import com.orogersilva.bntm.domain.usecase.impl.GetContactsUseCaseImpl;
 import com.orogersilva.bntm.domain.usecase.impl.SendMoneyUseCaseImpl;
-import com.orogersilva.bntm.presentation.converter.PresentationModelConverters;
+import com.orogersilva.bntm.presentation.converter.PresentationModelConverter;
 import com.orogersilva.bntm.presentation.model.Contact;
 import com.orogersilva.bntm.presentation.screens.AbstractPresenter;
 import com.orogersilva.bntm.util.StringUtils;
@@ -117,7 +117,7 @@ public class TransferPresenter extends AbstractPresenter implements TransferCont
 
                         Collections.sort(contacts);
 
-                        mView.showContacts(PresentationModelConverters.convertListToPresentationModel(contacts));
+                        mView.showContacts(PresentationModelConverter.convertContactListToPresentationModel(contacts));
                     }
 
                     @Override
