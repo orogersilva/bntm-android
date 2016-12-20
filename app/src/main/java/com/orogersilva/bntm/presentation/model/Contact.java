@@ -1,7 +1,5 @@
 package com.orogersilva.bntm.presentation.model;
 
-import android.support.annotation.NonNull;
-
 import java.util.Arrays;
 
 /**

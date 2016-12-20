@@ -6,7 +6,6 @@ import com.orogersilva.bntm.net.services.AuthService;
 
 import java.io.IOException;
 
-import retrofit2.Call;
 import retrofit2.Response;
 import timber.log.Timber;
 

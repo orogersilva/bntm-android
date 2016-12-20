@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.orogersilva.bntm.TransferDataSource;
 import com.orogersilva.bntm.storage.model.ContactTransfer;
-import com.orogersilva.bntm.storage.persistence.TransferLocalDataSource;
 import com.orogersilva.bntm.sync.model.Transfer;
 
 import java.util.List;

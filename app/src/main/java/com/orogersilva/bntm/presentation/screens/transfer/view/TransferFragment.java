@@ -1,6 +1,5 @@
 package com.orogersilva.bntm.presentation.screens.transfer.view;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -9,13 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.blackcat.currencyedittext.CurrencyEditText;
-import com.google.i18n.phonenumbers.NumberParseException;
-import com.google.i18n.phonenumbers.PhoneNumberUtil;
-import com.google.i18n.phonenumbers.Phonenumber;
 import com.orogersilva.bntm.R;
 import com.orogersilva.bntm.presentation.CustomTransferDialog;
 import com.orogersilva.bntm.presentation.adapter.ContactAdapter;
@@ -25,8 +18,6 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import timber.log.Timber;
 
 /**
  * Created by orogersilva on 12/17/2016.

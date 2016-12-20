@@ -4,8 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.*;
 import com.crashlytics.android.core.BuildConfig;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.orogersilva.bntm.storage.persistence.AuthLocalDataSource;
 import com.orogersilva.bntm.util.StringUtils;
 

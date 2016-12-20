@@ -2,7 +2,6 @@ package com.orogersilva.bntm.domain.usecase;
 
 import com.orogersilva.bntm.domain.usecase.base.UseCase;
 import com.orogersilva.bntm.storage.model.ContactTransfer;
-import com.orogersilva.bntm.sync.model.Transfer;
 
 import java.util.List;
 
