@@ -76,8 +76,9 @@ public class TransferPresenter extends AbstractPresenter implements TransferCont
 
         if (StringUtils.isNullOrEmpty(authToken)) {
 
-            GetAuthTokenUseCase getAuthTokenUseCase = new GetAuthTokenUseCaseImpl("Roger Silva",
-                    "orogersilva@gmail.com", mExecutor, mMainThread, new GetAuthTokenUseCase.Callback() {
+            GetAuthTokenUseCase getAuthTokenUseCase = new GetAuthTokenUseCaseImpl(
+                    BntmApp.getInstance().getUsername(), BntmApp.getInstance().getEmail(),
+                    mExecutor, mMainThread, new GetAuthTokenUseCase.Callback() {
 
                 @Override
                 public void onAuthTokenLoaded(String authToken) {

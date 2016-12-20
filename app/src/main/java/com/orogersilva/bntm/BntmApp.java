@@ -24,6 +24,9 @@ public class BntmApp extends Application {
 
     private String mAuthToken;
 
+    private final String USERNAME = "Roger Silva";
+    private final String EMAIL = "orogersilva@gmail.com";
+
     // endregion
 
     // region APPLICATION LIFECYCLE METHODS
@@ -79,6 +82,16 @@ public class BntmApp extends Application {
         mAuthToken = authToken;
     }
 
+    public String getUsername() {
+
+        return USERNAME;
+    }
+
+    public String getEmail() {
+
+        return EMAIL;
+    }
+
     public boolean hasLoggedIn() {
 
         return !StringUtils.isNullOrEmpty(mAuthToken);
@@ -90,12 +103,9 @@ public class BntmApp extends Application {
 
     private void tryRetrieveAuthTokenFromStorage() {
 
-        final String NAME = "Roger Silva";
-        final String EMAIL = "orogersilva@gmail.com";
-
         AuthLocalDataSource authLocalDataSource = AuthLocalDataSource.getInstance(this);
 
-        authLocalDataSource.getAuthToken(NAME, EMAIL, new AuthDataSource.GetAuthTokenCallback() {
+        authLocalDataSource.getAuthToken(USERNAME, EMAIL, new AuthDataSource.GetAuthTokenCallback() {
 
             @Override
             public void onAuthTokenLoaded(String authToken) {

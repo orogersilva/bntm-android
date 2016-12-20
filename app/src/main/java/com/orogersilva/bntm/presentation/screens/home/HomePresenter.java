@@ -1,5 +1,7 @@
 package com.orogersilva.bntm.presentation.screens.home;
 
+import com.orogersilva.bntm.BntmApp;
+
 /**
  * Created by orogersilva on 12/17/2016.
  */
@@ -28,10 +30,7 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void resume() {
 
-        final String NAME = "Roger Silva";
-        final String EMAIL = "orogersilva@gmail.com";
-
-        mView.showHome(NAME, EMAIL);
+        mView.showHome(BntmApp.getInstance().getUsername(), BntmApp.getInstance().getEmail());
     }
 
     // endregion
