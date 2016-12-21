@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+0.2.4 *(2016-12-21)*
+--------------------
+
+* Internal: Estabilizando (novamente) o build no CI.
+
 0.2.3 *(2016-12-20)*
 --------------------
 
