@@ -25,7 +25,7 @@ public class BntmApp extends Application {
 
     private String mAuthToken;
 
-    private final String USERNAME = "Roger Silva";
+    private final String USERNAME = "Roger T. A. da Silva";
     private final String EMAIL = "orogersilva@gmail.com";
 
     // endregion

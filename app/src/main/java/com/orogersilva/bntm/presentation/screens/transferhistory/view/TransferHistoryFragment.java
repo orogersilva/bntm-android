@@ -113,7 +113,7 @@ public class TransferHistoryFragment extends Fragment implements TransferHistory
     public void showSyncErrorMessage() {
 
         Snackbar.make(getActivity().findViewById(android.R.id.content),
-                getActivity().getString(R.string.sync_failure_message),
+                getActivity().getString(R.string.no_available_information_message),
                 Snackbar.LENGTH_LONG)
                 .show();
     }

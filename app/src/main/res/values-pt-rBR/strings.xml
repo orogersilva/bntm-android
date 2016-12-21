@@ -11,10 +11,10 @@
     <string name="neon_bank">BANCO NEON</string>
     <string name="money_to_send">VALOR A ENVIAR:</string>
     <string name="money_transfer_historic">HISTÓRICO DE ENVIOS</string>
+    <string name="no_available_information_message">Não há informações disponíveis a exibir.</string>
     <string name="send">ENVIAR</string>
     <string name="send_money">ENVIAR DINHEIRO</string>
     <string name="send_money_successful_status_message">O envio foi realizado com sucesso.</string>
-    <string name="sync_failure_message">Houve uma falha na sincronização. Tente mais tarde novamente.</string>
     <string name="transfer_historic">HISTÓRICO DE ENVIOS</string>
 
 </resources>
