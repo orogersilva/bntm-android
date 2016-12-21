@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+0.2.2 *(2016-12-20)*
+--------------------
+
+* Fix: Limitando tempo de exibição das Snackbars.
+* Internal: Aceitando licenças de SDK via script no CI.
+
 0.2.1 *(2016-12-20)*
 --------------------
 
