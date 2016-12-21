@@ -144,7 +144,7 @@ public class TransferFragment extends Fragment implements TransferContract.View 
 
         Snackbar.make(getActivity().findViewById(android.R.id.content),
                 message,
-                Snackbar.LENGTH_INDEFINITE)
+                Snackbar.LENGTH_LONG)
                 .show();
     }
 
