@@ -2,10 +2,10 @@ language: android
 jdk:
   - oraclejdk8
 
-deploy:
-  on:
-    tags: true
-  
+branches:
+  except:
+    - /^v[0-9]/
+
 android:
 
   licenses:
