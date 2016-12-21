@@ -13,7 +13,6 @@
     <string name="money_transfer_historic">HISTÓRICO DE ENVIOS</string>
     <string name="send">ENVIAR</string>
     <string name="send_money">ENVIAR DINHEIRO</string>
-    <string name="send_money_fail_status_message">Houve uma falha no envio. Favor, tentar novamente.</string>
     <string name="send_money_successful_status_message">O envio foi realizado com sucesso.</string>
     <string name="sync_failure_message">Houve uma falha na sincronização. Tente mais tarde novamente.</string>
     <string name="transfer_historic">HISTÓRICO DE ENVIOS</string>

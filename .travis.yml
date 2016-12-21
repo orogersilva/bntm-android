@@ -1,6 +1,10 @@
 language: android
 jdk:
   - oraclejdk8
+
+deploy:
+  on:
+    tags: true
   
 android:
 
