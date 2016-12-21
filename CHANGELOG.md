@@ -1,7 +1,12 @@
 Change Log
 ==========
 
-0.2.5 *(2016-12-21)*
+0.2.7 *(2016-12-21)*
+--------------------
+
+* Internal: CI.
+
+0.2.6 *(2016-12-21)*
 --------------------
 
 * Internal: Ajustes na configuração do Travis CI (mais uma vez, amém! :).
