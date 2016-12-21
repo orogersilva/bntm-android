@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+0.2.8 *(2016-12-21)*
+--------------------
+
+* Fix: Ajustando mensagem na tela de histórico de envios.
+
 0.2.7 *(2016-12-21)*
 --------------------
 
