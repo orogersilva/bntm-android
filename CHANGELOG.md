@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+0.2.9 *(2016-12-21)*
+--------------------
+
+* Internal: Removendo 'unused string' para validar inspeção de código.
+
 0.2.8 *(2016-12-21)*
 --------------------
 
